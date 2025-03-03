@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beautify URL</title>
+</head>
+<body>
+    <h1>URL Beautification Example</h1>
+    <p>Current URL: <span id="currentURL"></span></p>
+    <button onclick="beautifyURL()">Beautify URL</button>
+    <p>After clicking the button, the URL in the address bar will change.</p>
+
+    <script>
+        // Function to display the current URL
+        function displayCurrentURL() {
+            document.getElementById("currentURL").innerText = window.location.href;
+        }
+
+        // Function to beautify the URL
+        function beautifyURL() {
+            // Desired URL
+            const newURL = "https://anoldmadzore.com";
+            
+            // Optional state object
+            const stateObj = {};
+            
+            // Replace the current URL with the new one
+            history.replaceState(stateObj, "Beautified Page", newURL);
+            
+            // Update the displayed current URL
+            displayCurrentURL();
+        }
+
+        // Display the current URL initially
+        displayCurrentURL();
+    </script>
+</body>
+</html>
